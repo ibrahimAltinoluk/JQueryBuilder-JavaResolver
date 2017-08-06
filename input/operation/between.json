@@ -1,0 +1,30 @@
+{
+	"condition": "AND",
+	"rules": [
+		{
+			"id": "number",
+			"field": "number",
+			"type": "integer",
+			"input": "text",
+			"operator": "between",
+			"value": ["10","100"]
+		},
+		{
+			"condition": "AND",
+			"rules": [
+				{
+					"id": "number",
+					"field": "number",
+					"type": "integer",
+					"input": "text",
+					"operator": "not_between",
+					"value": ["50","70"]
+				}
+			],
+			"not": true,
+			"valid": true
+		}
+	],
+	"not": false,
+	"valid": true
+}

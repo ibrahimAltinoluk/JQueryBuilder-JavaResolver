@@ -1,0 +1,27 @@
+{
+	"condition": "AND",
+	"rules": [
+		{
+			"id": "number",
+			"field": "number",
+			"type": "integer",
+			"input": "text",
+			"operator": "in",
+			"value": ["1","2","11","12"]
+		},
+		{
+			"id": "hobby",
+			"field": "hobby",
+			"type": "string",
+			"input": "text",
+			"operator": "not_in",
+			"value": [
+				"skateboard",
+				"swimming",
+				"painting"
+			]
+		}
+	],
+	"not": false,
+	"valid": true
+}
