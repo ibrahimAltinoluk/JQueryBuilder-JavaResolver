@@ -1,10 +1,10 @@
 ## JavaResolver for jQuery QueryBuilder
-This library helps you for execute that created validations via  [jQuery QueryBuilder](http://querybuilder.js.org/).
+This library helps you for executing to created validations with [jQuery QueryBuilder](http://querybuilder.js.org/).
 
 > Tested for only (jQuery QueryBuilder v2.4.3).
 ### Using
-You can execute to generated validations basically. 
-Generated validation json should be convert to `Map` for using executions.  `Gson` dependency is good for converting to `Map` from string. 
+You can execute to generated validations as  simply. 
+Generated validation text/json should be convert to `Map` for using executions.  `Gson` dependency is good choice for converting to `Map` from string. 
 
 ```xml
 <dependency>
