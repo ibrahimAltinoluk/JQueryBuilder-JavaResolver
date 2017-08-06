@@ -35,55 +35,55 @@ public class ValidationTest extends BaseTest {
 
   public void testAgeValidation() {
     Map map = gson.fromJson(readFile("input/age_validation.json"), Map.class);
-    ValidationGroup conditionGroup = new ValidationGroup(map);
+    ValidationGroup validationGroup = new ValidationGroup(map);
 
-    assertTrue(conditionGroup.execute(data1));
-    assertFalse(conditionGroup.execute(data2));
-    assertFalse(conditionGroup.execute(data3));
+    assertTrue(validationGroup.execute(data1));
+    assertFalse(validationGroup.execute(data2));
+    assertFalse(validationGroup.execute(data3));
   }
 
   public void testAgeValidationNot() {
     Map map = gson.fromJson(readFile("input/age_validation_not.json"), Map.class);
 
-    ValidationGroup conditionGroup = new ValidationGroup(map);
+    ValidationGroup validationGroup = new ValidationGroup(map);
 
-    assertTrue(conditionGroup.execute(data10));
-    assertFalse(conditionGroup.execute(data1));
+    assertTrue(validationGroup.execute(data10));
+    assertFalse(validationGroup.execute(data1));
 
   }
 
   public void testHobbyValidation() {
     Map map = gson.fromJson(readFile("input/hobby_validation.json"), Map.class);
 
-    ValidationGroup conditionGroup = new ValidationGroup(map);
+    ValidationGroup validationGroup = new ValidationGroup(map);
 
-    assertFalse(conditionGroup.execute(data1));
-    assertTrue(conditionGroup.execute(data2));
-    assertFalse(conditionGroup.execute(data3));
-    assertTrue(conditionGroup.execute(data4));
+    assertFalse(validationGroup.execute(data1));
+    assertTrue(validationGroup.execute(data2));
+    assertFalse(validationGroup.execute(data3));
+    assertTrue(validationGroup.execute(data4));
   }
 
   public void testHobbyValidationNot() {
     Map map = gson.fromJson(readFile("input/hobby_validation_not.json"), Map.class);
 
-    ValidationGroup conditionGroup = new ValidationGroup(map);
+    ValidationGroup validationGroup = new ValidationGroup(map);
 
-    assertFalse(conditionGroup.execute(data1));
-    assertFalse(conditionGroup.execute(data2));
-    assertTrue(conditionGroup.execute(data3));
-    assertFalse(conditionGroup.execute(data4));
+    assertFalse(validationGroup.execute(data1));
+    assertFalse(validationGroup.execute(data2));
+    assertTrue(validationGroup.execute(data3));
+    assertFalse(validationGroup.execute(data4));
   }
 
   public void testNumberValidation() {
     Map map = gson.fromJson(readFile("input/validation3.json"), Map.class);
 
-    ValidationGroup conditionGroup = new ValidationGroup(map);
+    ValidationGroup validationGroup = new ValidationGroup(map);
 
-    assertTrue(conditionGroup.execute(data5));
-    assertTrue(conditionGroup.execute(data6));
-    assertTrue(conditionGroup.execute(data7));
-    assertTrue(conditionGroup.execute(data8));
-    assertFalse(conditionGroup.execute(data9));
+    assertTrue(validationGroup.execute(data5));
+    assertTrue(validationGroup.execute(data6));
+    assertTrue(validationGroup.execute(data7));
+    assertTrue(validationGroup.execute(data8));
+    assertFalse(validationGroup.execute(data9));
   }
 
 }

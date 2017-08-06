@@ -26,21 +26,21 @@ public class OperationTest extends BaseTest {
 
   public void testInOperation() {
     Map map = gson.fromJson(readFile("input/operation/in.json"), Map.class);
-    ValidationGroup conditionGroup = new ValidationGroup(map);
+    ValidationGroup validationGroup = new ValidationGroup(map);
 
-    assertTrue(conditionGroup.execute(data1));
-    assertTrue(conditionGroup.execute(data2));
-    assertFalse(conditionGroup.execute(data3));
-    assertFalse(conditionGroup.execute(data4));
+    assertTrue(validationGroup.execute(data1));
+    assertTrue(validationGroup.execute(data2));
+    assertFalse(validationGroup.execute(data3));
+    assertFalse(validationGroup.execute(data4));
 
   }
 
   public void testLessOperation() {
     Map map = gson.fromJson(readFile("input/operation/less.json"), Map.class);
-    ValidationGroup conditionGroup = new ValidationGroup(map);
+    ValidationGroup validationGroup = new ValidationGroup(map);
 
-    assertFalse(conditionGroup.execute(data5));
-    assertTrue(conditionGroup.execute(data6));
+    assertFalse(validationGroup.execute(data5));
+    assertTrue(validationGroup.execute(data6));
 
   }
 
