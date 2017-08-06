@@ -6,7 +6,7 @@ This library helps you for execute that created validations via  [jQuery QueryBu
 You can execute to generated validations basically. 
 Generated validation json should be convert to `Map` for using executions.  `Gson` dependency is good for converting to `Map` from string. 
 
-```
+```xml
 <dependency>
 	<groupId>com.google.code.gson</groupId>
 	<artifactId>gson</artifactId>
@@ -16,7 +16,7 @@ Generated validation json should be convert to `Map` for using executions.  `Gso
 
 
 #### Example Validation Json
-```
+```js
 // String validationString=..
  {
          "condition":"OR",
@@ -38,7 +38,7 @@ Generated validation json should be convert to `Map` for using executions.  `Gso
       }
 ```
 #### Using Validation Execution 
-```
+```java
 //your data object
 Map yourData = new HashMap<>();
 yourData.put("number", "7");
