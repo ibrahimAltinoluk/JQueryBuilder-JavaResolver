@@ -57,6 +57,8 @@ public class ValidationGroup {
     }
     for (ValidationGroup validationGroup : validationGroups) {
       boolean ruleResult = validationGroup.execute(data);
+      if (result == null) {
+        result = ruleResult;
       if (Condition.AND.equals(condition)) {
         result &= ruleResult;
       } else {
