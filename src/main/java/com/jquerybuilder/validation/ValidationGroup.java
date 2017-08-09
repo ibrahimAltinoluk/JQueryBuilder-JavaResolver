@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import com.jquerybuilder.exception.FieldNotFoundException;
+
 public class ValidationGroup {
 
   public enum Condition {
@@ -41,7 +43,7 @@ public class ValidationGroup {
     }
   }
 
-  public boolean execute(Map data) {
+  public boolean execute(Map data) throws FieldNotFoundException {
 
     Boolean result = null;
 
@@ -55,18 +57,17 @@ public class ValidationGroup {
         result |= ruleResult;
       }
     }
+
     for (ValidationGroup validationGroup : validationGroups) {
       boolean ruleResult = validationGroup.execute(data);
       if (result == null) {
         result = ruleResult;
-      if (Condition.AND.equals(condition)) {
+      } else if (Condition.AND.equals(condition)) {
         result &= ruleResult;
       } else {
         result |= ruleResult;
       }
     }
-
     return not ? !result : result;
   }
-
 }

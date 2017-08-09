@@ -2,6 +2,8 @@ package com.jquerybuilder.validation;
 
 import java.util.Map;
 
+import com.jquerybuilder.exception.FieldNotFoundException;
+
 public class ValidationRule {
   private String id;
   private String field;
@@ -21,9 +23,9 @@ public class ValidationRule {
     setValue(map.get("value"));
   }
 
-  public boolean execute(Map data) {
+  public boolean execute(Map data) throws FieldNotFoundException {
     if (!data.containsKey(field)) {
-      return false;
+     throw new FieldNotFoundException("(field:"+field + ") not found in map");
     }
     String rawDataValue = data.get(field).toString();
     return Operation.apply(operator, rawDataValue, value);

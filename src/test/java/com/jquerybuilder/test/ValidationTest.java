@@ -2,6 +2,7 @@ package com.jquerybuilder.test;
 
 import java.util.Map;
 
+import com.jquerybuilder.exception.FieldNotFoundException;
 import com.jquerybuilder.validation.ValidationGroup;
 
 public class ValidationTest extends BaseTest {
@@ -33,7 +34,7 @@ public class ValidationTest extends BaseTest {
     data10.put("username", "gürsel");
   }
 
-  public void testAgeValidation() {
+  public void testAgeValidation() throws FieldNotFoundException {
     Map map = gson.fromJson(readFile("input/age_validation.json"), Map.class);
     ValidationGroup validationGroup = new ValidationGroup(map);
 
@@ -42,7 +43,7 @@ public class ValidationTest extends BaseTest {
     assertFalse(validationGroup.execute(data3));
   }
 
-  public void testAgeValidationNot() {
+  public void testAgeValidationNot() throws FieldNotFoundException {
     Map map = gson.fromJson(readFile("input/age_validation_not.json"), Map.class);
 
     ValidationGroup validationGroup = new ValidationGroup(map);
@@ -52,29 +53,27 @@ public class ValidationTest extends BaseTest {
 
   }
 
-  public void testHobbyValidation() {
+  public void testHobbyValidation() throws FieldNotFoundException {
     Map map = gson.fromJson(readFile("input/hobby_validation.json"), Map.class);
 
     ValidationGroup validationGroup = new ValidationGroup(map);
 
-    assertFalse(validationGroup.execute(data1));
     assertTrue(validationGroup.execute(data2));
     assertFalse(validationGroup.execute(data3));
     assertTrue(validationGroup.execute(data4));
   }
 
-  public void testHobbyValidationNot() {
+  public void testHobbyValidationNot() throws FieldNotFoundException {
     Map map = gson.fromJson(readFile("input/hobby_validation_not.json"), Map.class);
 
     ValidationGroup validationGroup = new ValidationGroup(map);
 
-    assertFalse(validationGroup.execute(data1));
     assertFalse(validationGroup.execute(data2));
     assertTrue(validationGroup.execute(data3));
     assertFalse(validationGroup.execute(data4));
   }
 
-  public void testNumberValidation() {
+  public void testNumberValidation() throws FieldNotFoundException {
     Map map = gson.fromJson(readFile("input/validation3.json"), Map.class);
 
     ValidationGroup validationGroup = new ValidationGroup(map);

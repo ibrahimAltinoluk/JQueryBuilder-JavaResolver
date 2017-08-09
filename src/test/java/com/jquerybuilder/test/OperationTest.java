@@ -2,6 +2,7 @@ package com.jquerybuilder.test;
 
 import java.util.Map;
 
+import com.jquerybuilder.exception.FieldNotFoundException;
 import com.jquerybuilder.validation.ValidationGroup;
 
 public class OperationTest extends BaseTest {
@@ -24,7 +25,7 @@ public class OperationTest extends BaseTest {
 
   }
 
-  public void testInOperation() {
+  public void testInOperation() throws FieldNotFoundException {
     Map map = gson.fromJson(readFile("input/operation/in.json"), Map.class);
     ValidationGroup validationGroup = new ValidationGroup(map);
 
@@ -35,7 +36,7 @@ public class OperationTest extends BaseTest {
 
   }
 
-  public void testLessOperation() {
+  public void testLessOperation() throws FieldNotFoundException {
     Map map = gson.fromJson(readFile("input/operation/less.json"), Map.class);
     ValidationGroup validationGroup = new ValidationGroup(map);
 
@@ -44,7 +45,7 @@ public class OperationTest extends BaseTest {
 
   }
 
-  public void testBetweenOperation() {
+  public void testBetweenOperation() throws FieldNotFoundException {
     Map map = gson.fromJson(readFile("input/operation/between.json"), Map.class);
     ValidationGroup conditionGroup = new ValidationGroup(map);
 
