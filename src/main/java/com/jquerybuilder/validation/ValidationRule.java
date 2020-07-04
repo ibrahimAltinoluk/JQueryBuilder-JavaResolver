@@ -3,6 +3,7 @@ package com.jquerybuilder.validation;
 import java.util.Map;
 
 import com.jquerybuilder.exception.FieldNotFoundException;
+import com.jquerybuilder.operation.Operation;
 
 public class ValidationRule {
   private String id;
