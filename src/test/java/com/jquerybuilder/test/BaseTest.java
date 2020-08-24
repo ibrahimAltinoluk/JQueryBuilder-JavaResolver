@@ -6,24 +6,22 @@ import java.io.FileInputStream;
 import java.io.InputStreamReader;
 import java.util.HashMap;
 import java.util.Map;
-
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-
 import junit.framework.TestCase;
 
 public class BaseTest extends TestCase {
 
-  protected Map<String, String> data1 = new HashMap<String, String>();
-  protected Map<String, String> data2 = new HashMap<String, String>();
-  protected Map<String, String> data3 = new HashMap<String, String>();
-  protected Map<String, String> data4 = new HashMap<String, String>();
-  protected Map<String, String> data5 = new HashMap<String, String>();
-  protected Map<String, String> data6 = new HashMap<String, String>();
-  protected Map<String, String> data7 = new HashMap<String, String>();
-  protected Map<String, String> data8 = new HashMap<String, String>();
-  protected Map<String, String> data9 = new HashMap<String, String>();
-  protected Map<String, String> data10 = new HashMap<String, String>();
+  protected Map<String, String> data1 = new HashMap<>();
+  protected Map<String, String> data2 = new HashMap<>();
+  protected Map<String, String> data3 = new HashMap<>();
+  protected Map<String, String> data4 = new HashMap<>();
+  protected Map<String, String> data5 = new HashMap<>();
+  protected Map<String, String> data6 = new HashMap<>();
+  protected Map<String, String> data7 = new HashMap<>();
+  protected Map<String, String> data8 = new HashMap<>();
+  protected Map<String, String> data9 = new HashMap<>();
+  protected Map<String, String> data10 = new HashMap<>();
 
   protected Gson gson = new GsonBuilder().create();
 
@@ -33,8 +31,9 @@ public class BaseTest extends TestCase {
       File fileDir = new File(file);
       BufferedReader in = new BufferedReader(new InputStreamReader(new FileInputStream(fileDir), "UTF8"));
       String str;
-      while ((str = in.readLine()) != null)
+      while ((str = in.readLine()) != null) {
         sb.append(str);
+      }
       in.close();
     } catch (Exception e) {
       e.printStackTrace();
@@ -46,5 +45,4 @@ public class BaseTest extends TestCase {
   public void testBase() {
     assertNotNull(gson);
   }
-
 }

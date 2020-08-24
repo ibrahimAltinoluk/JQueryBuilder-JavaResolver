@@ -3,13 +3,13 @@ package com.jquerybuilder.validation;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-
 import com.jquerybuilder.exception.FieldNotFoundException;
 
 public class ValidationGroup {
 
   public enum Condition {
     AND, OR;
+
     public static Condition get(Object v) {
       return Condition.valueOf(v.toString().toUpperCase());
     }
@@ -25,7 +25,7 @@ public class ValidationGroup {
   private Condition condition;
   private boolean not = false;
 
-  public ValidationGroup(Map map) {
+  public ValidationGroup(Map<?, ?> map) {
     build(map);
   }
 

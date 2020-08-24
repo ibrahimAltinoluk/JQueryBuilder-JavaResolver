@@ -6,36 +6,28 @@ This library helps you for executing to created validations with [jQuery QueryBu
 You can execute to generated validations as  simply. 
 Generated validation text/json should be convert to `Map` for using executions.  `Gson` dependency is good choice for converting to `Map` from string. 
 
-```xml
-<dependency>
-	<groupId>com.google.code.gson</groupId>
-	<artifactId>gson</artifactId>
-	<version>2.8.0</version>
-</dependency>
-```
-
 
 #### Example Validation Json
 ```js
 // String validationString=..
- {
-         "condition":"OR",
-         "rules":[
-            {
-               "field":"number",
-               "type":"integer",
-               "operator":"equal",
-               "value":"7"
-            },
-            {
-               "field":"number",
-               "type":"integer",
-               "operator":"equal",
-               "value":"8"
-            }
-         ],
-         "not":false
+{
+   "condition":"OR",
+   "rules":[
+      {
+         "field":"number",
+         "type":"integer",
+         "operator":"equal",
+         "value":"7"
+      },
+      {
+         "field":"number",
+         "type":"integer",
+         "operator":"equal",
+         "value":"8"
       }
+   ],
+   "not":false
+}
 ```
 #### Using Validation Execution 
 ```java
@@ -52,7 +44,7 @@ ValidationGroup validationGroup = new ValidationGroup(map);
 
 //execute validation
 boolean result=validationGroup.execute(yourData)
-assertTrue(result);// result will `true` according to example
+assertTrue(result);// true
 
 
 ```

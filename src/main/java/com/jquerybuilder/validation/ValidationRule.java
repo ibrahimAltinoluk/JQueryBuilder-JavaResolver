@@ -1,8 +1,8 @@
 package com.jquerybuilder.validation;
 
 import java.util.Map;
-
 import com.jquerybuilder.exception.FieldNotFoundException;
+import com.jquerybuilder.operation.Operation;
 
 public class ValidationRule {
   private String id;
@@ -16,18 +16,18 @@ public class ValidationRule {
   }
 
   public void build(Map<String, String> map) {
-    setId(map.get("id"));
-    setField(map.get("field"));
-    setType(map.get("type"));
-    setOperator(map.get("operator"));
-    setValue(map.get("value"));
+    this.id = map.get("id");
+    this.field = map.get("field");
+    this.type = map.get("type");
+    this.operator = map.get("operator");
+    this.value = map.get("value");
   }
 
   public boolean execute(Map data) throws FieldNotFoundException {
     if (!data.containsKey(field)) {
-     throw new FieldNotFoundException("(field:"+field + ") not found in map");
+      throw new FieldNotFoundException("(field:" + field + ") not found in map");
     }
-    String rawDataValue = data.get(field).toString();
+    String rawDataValue = String.valueOf(data.get(field));
     return Operation.apply(operator, rawDataValue, value);
   }
 
