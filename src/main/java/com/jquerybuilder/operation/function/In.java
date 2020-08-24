@@ -1,14 +1,14 @@
 package com.jquerybuilder.operation.function;
 
 import com.jquerybuilder.operation.OperationExecutor;
-import com.jquerybuilder.operation.UnaryExecutor;
+import com.jquerybuilder.operation.BinaryExecutor;
 
-public class In extends OperationExecutor implements UnaryExecutor {
+public class In extends OperationExecutor implements BinaryExecutor {
 
   @Override
-  public boolean apply(Object argument1, Object argument2) {
+  public boolean apply(Object arg, Object list) {
     try {
-      return list(argument2).contains(argument1);
+      return list(list).contains(arg);
     } catch (Exception e) {
       return false;
     }

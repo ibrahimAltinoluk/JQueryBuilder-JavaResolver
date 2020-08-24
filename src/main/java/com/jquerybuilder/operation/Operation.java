@@ -72,11 +72,11 @@ public class Operation {
 
   public static boolean apply(String operation, Object v1) {
     Object operator = operationMap.get(operation);
-    return ((BinaryExecutor) operator).apply(v1);
+    return ((UnaryExecutor) operator).apply(v1);
   }
 
   public static boolean apply(String operation, Object v1, Object v2) {
     Object operator = operationMap.get(operation);
-    return ((UnaryExecutor) operator).apply(v1, v2);
+    return ((BinaryExecutor) operator).apply(v1, v2);
   }
 }

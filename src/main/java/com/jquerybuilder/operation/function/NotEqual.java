@@ -1,9 +1,9 @@
 package com.jquerybuilder.operation.function;
 
 import com.jquerybuilder.operation.OperationExecutor;
-import com.jquerybuilder.operation.UnaryExecutor;
+import com.jquerybuilder.operation.BinaryExecutor;
 
-public class NotEqual extends OperationExecutor implements UnaryExecutor {
+public class NotEqual extends OperationExecutor implements BinaryExecutor {
   @Override
   public boolean apply(Object argument1, Object argument2) {
     try {

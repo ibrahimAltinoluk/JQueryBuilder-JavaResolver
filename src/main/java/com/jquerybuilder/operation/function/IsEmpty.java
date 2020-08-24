@@ -1,10 +1,10 @@
 package com.jquerybuilder.operation.function;
 
 import java.util.List;
-import com.jquerybuilder.operation.BinaryExecutor;
+import com.jquerybuilder.operation.UnaryExecutor;
 import com.jquerybuilder.operation.OperationExecutor;
 
-public class IsEmpty extends OperationExecutor implements BinaryExecutor {
+public class IsEmpty extends OperationExecutor implements UnaryExecutor {
   @Override
   public boolean apply(Object argument) {
     try {

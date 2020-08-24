@@ -65,11 +65,11 @@ public class OperationTest extends BaseTest {
   }
 
   public void testContainsOperation() {
-    assertTrue(Operation.Contains.apply("a", "abc"));
-    assertTrue(Operation.Contains.apply("b", "abc"));
-    assertTrue(Operation.Contains.apply("c", "abc"));
-    assertTrue(Operation.Contains.apply("ab", "abc"));
-    assertFalse(Operation.Contains.apply("ac", "abc"));
+    assertTrue(Operation.Contains.apply("abc", "a"));
+    assertTrue(Operation.Contains.apply("abc", "b"));
+    assertTrue(Operation.Contains.apply("abc", "c"));
+    assertTrue(Operation.Contains.apply("abc", "ab"));
+    assertFalse(Operation.Contains.apply("abc", "ac"));
   }
 
   public void testNotContainsOperation() {
